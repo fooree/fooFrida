@@ -8,14 +8,14 @@
 
 import frida
 
-# 附加到记事本进程
+# 附加到记事本进程，只有附加到目标进程，才能对其进行操作，这个必须是动态插装的第一步
 session = frida.attach("notepad.exe")
 # 获取记事本进程加载的所有模块(动态库、程序)
 modules = session.enumerate_modules()
 
 print("=========== modules ===========")
 for module in modules:
-    print(module.name)          # 加载的模块名称
+    print(module.name)            # 加载的模块名称
     # print(module.base_address)  # 模块在内存中的基址
     # print(module.size)          # 模块占空间大小
     # print(module.path)          # 模块文件位置
