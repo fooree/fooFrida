@@ -3,6 +3,7 @@ import frida
 
 """
 动态注入Android Chrome浏览器。
+指定本程序之前，需要打开手机上的Chrome浏览器。
 """
 # 获取通过UBS数据线连接到电脑的手机设备
 device = frida.get_usb_device()
